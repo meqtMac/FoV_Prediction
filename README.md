@@ -9,5 +9,5 @@ All recorded gaze data are in 'Gaze_txt_files' directory, under this directory, 
 ---
 1. Train and test using sliding window, train longitude and latitude separately.
 2. Train and acquire accuracy.
-KNN: choose k.
-LR: choose size of sliding window.
+3. KNN: choose k.
+4. LR: choose size of sliding window.
