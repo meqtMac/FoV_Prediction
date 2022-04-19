@@ -1,5 +1,5 @@
-# FoV_Prediction 基于KNN和LR的视点预测
-Predict user FoV using KNN and LR
+# FoV_Prediction 基于KNN\LR\Lstm的视点预测
+Predict user FoV using KNN, LR and Lstm
 
 ## Dataset
 ---
