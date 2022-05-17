@@ -42,7 +42,7 @@ def series_to_supervised(data):
 
 
 # dataset dir    
-csvx_list=glob.glob(r"E:/datasets/viewpoint/Gaze_txt_files/Gaze_txt_files/*/179.*.txt")
+csvx_list=glob.glob(r"../../Gaze_txt_files/*/179.*.txt")
 
 for filename in csvx_list:
     x_i=[]
@@ -105,4 +105,5 @@ plt.show()
 plt.plot(LSTM.history['loss'], label='train')
 plt.plot(LSTM.history['val_loss'], label='valid')
 plt.legend()
+plt.savefig("figure/prediction_fig02.pdf")
 plt.show()

@@ -43,7 +43,7 @@ def series_to_supervised(data):
         data_y.append(y)#标签
 
 #批量读取路径    
-csvx_list=glob.glob(r"E:/datasets/viewpoint/Gaze_txt_files/Gaze_txt_files/*/179.*.txt")
+csvx_list=glob.glob(r"../../Gaze_txt_files/*/179.*.txt")
 
 for filename in csvx_list:
     x_i=[]
@@ -131,26 +131,27 @@ model.compile(loss='mse',
 
 model.optimizer.lr.assign(0.001)#更改学习率
 LSTM = model.fit(train_x, train_y, epochs=30, batch_size=64, validation_data=(test_x, test_y))
-'''  
+
 fig=plt.figure(dpi=128,figsize=(10,3))
 plt.plot(frame,x_i,c='blue')#x变换
 plt.ylabel('',fontsize=12)
 plt.xticks([])  #去掉横坐标值
 plt.xlabel("playout time",fontsize=12)
+plt.savefig("figure/attension_fig01.pdf")
 plt.show()
-'''
+
    
 plt.plot(LSTM.history['loss'], label='train')
 plt.plot(LSTM.history['val_loss'], label='valid')
 plt.legend()
+plt.savefig("figure/attension_fig02.pdf")
 plt.show()
 
 
 test_predict = model.predict(test_x)
-'''
 fig=plt.figure(dpi=128,figsize=(15,3))
 plt.plot(test_predict, label='train')
 plt.plot(test_y, label='valid')
 plt.legend()
+plt.savefig("figure/attension_fig03.pdf")
 plt.show()
-'''
